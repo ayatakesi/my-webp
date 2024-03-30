@@ -1,0 +1,18 @@
+diff --git a/Android.mk b/Android.mk
+index c7bcb0f5..d4da1704 100644
+--- a/Android.mk
++++ b/Android.mk
+@@ -28,9 +28,10 @@ ifneq ($(findstring armeabi-v7a, $(TARGET_ARCH_ABI)),)
+   # Setting LOCAL_ARM_NEON will enable -mfpu=neon which may cause illegal
+   # instructions to be generated for armv7a code. Instead target the neon code
+   # specifically.
+-  NEON := c.neon
+-  USE_CPUFEATURES := yes
+-  WEBP_CFLAGS += -DHAVE_CPU_FEATURES_H
++  # NEON := c.neon
++  # USE_CPUFEATURES := yes
++  # WEBP_CFLAGS += -DHAVE_CPU_FEATURES_H
++  NEON := c
+ else
+   NEON := c
+ endif
